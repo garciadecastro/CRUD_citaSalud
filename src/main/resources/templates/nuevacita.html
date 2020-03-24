@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/estilo.css">
+<title>Nueva Cita</title>
+</head>
+<body>
+<section id="tabs">
+	<div class="container">
+		<h2 class="section-title h1">NUEVA CITA</h2>
+		<div class="row">
+			<div class="col-xs-12 ">
+				<nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="/"  role="tab" aria-controls="nav-home" aria-selected="true" >Inicio</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"  href="/nuevacita" role="tab" aria-controls="nav-profile" aria-selected="false"  >Nueva Cita</a>
+						<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="/eliminarcita" role="tab" aria-controls="nav-about" aria-selected="false">Eliminar Cita</a>
+					</div>
+				</nav>
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+				<form  th:object="${cita}" method="post" action="#" th:action="@{/submit}">
+		<input type="hidden" th:field="*{id}" id="id" />
+		<label for="paciente">Nombre del Paciente</label>
+		<br />
+		<input type="text" id="paciente" placeholder="Escriba el nombre del paciente aquí"
+		required="required" th:field="*{paciente}" />
+			
+			<br /><br />
+			
+			<label for="fechaCita">Fecha:</label>
+				<br />
+			<input type="text" id="fechaCita" placeholder="Añada la fecha"
+			required="required"  th:field="*{fechaCita}"/>
+			
+			
+			
+			
+		<button type="submit">Confirmar</button>
+			</form>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</section>
+	
+
+		
+	
+
+	<!-- Los formularios los creamos con "form"  
+	GET: este método es menos seguro
+	POST: es un método más seguro para enviar información, ver:
+	https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=527:get-y-post-html-method-formas-de-envio-de-datos-en-formulario-diferencias-y-ventajas-ejemplos-cu00721b&catid=69&Itemid=192
+	-->
+
+
+
+</body>
+</html>

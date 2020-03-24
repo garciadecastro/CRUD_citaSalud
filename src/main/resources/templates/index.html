@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/estilo.css">
+<title>Crear nueva cita</title>
+</head>
+<body>
+	
+<section id="tabs">
+	<div class="container">
+		<h6 class="section-title h1">Anotar Cita Médica</h6>
+		<div class="row">
+			<div class="col-xs-12 ">
+				<nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="/"  role="tab" aria-controls="nav-home" aria-selected="true" >Inicio</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"  href="/nuevacita" role="tab" aria-controls="nav-profile" aria-selected="false"  >Nueva Cita</a>
+						<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="/eliminarcita" role="tab" aria-controls="nav-about" aria-selected="false">Eliminar Cita</a>
+					</div>
+				</nav>
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+				<h3>PACIENTES ACTUALES</h3>
+					<div class="col-sm-3" th:each="cita : ${listacitas}">
+					<p th:text="${cita.paciente}">nombre del paciente</p>
+					<p th:text="${cita.fechaCita}">fecha</p>
+					<p>**********************</p>
+				</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>
